@@ -1,0 +1,22 @@
+{
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "dependencies": {
+    "coffee-script": "1.9.0",
+    "mocha": "*",
+    "express": "4.13.3",
+    "ejs": "2.3.3",
+    "ncp": "2.0.0"
+  },
+  "scripts": {
+    "test": "mocha",
+    "brewCoffee": "coffee -o dist/ -c src/ && ncp src/server dist/server",
+    "hotCoffee": "coffee -o dist/ -cw src/",
+    "hotTests": "coffee -cwo spec/ spec/",
+    "postinstall": "npm run brewCoffee && ncp src/server dist/server",
+    "copyFiles": "ncp src/server dist/server",
+    "start": "node ./dist/server/index"
+  }
+}
