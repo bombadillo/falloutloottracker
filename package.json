@@ -12,11 +12,10 @@
   },
   "scripts": {
     "test": "mocha",
-    "brewCoffee": "coffee -o dist/ -c src/ && ncp src/server dist/server",
+    "brewCoffee": "coffee -o dist/ -c src/ && ncp src/ dist/",
     "hotCoffee": "coffee -o dist/ -cw src/",
     "hotTests": "coffee -cwo spec/ spec/",
-    "postinstall": "npm run brewCoffee && ncp src/server dist/server",
-    "copyFiles": "ncp src/server dist/server",
+    "postinstall": "npm run brewCoffee",
     "start": "node ./dist/server/index"
   }
 }
