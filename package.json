@@ -7,8 +7,12 @@
     "coffee-script": "1.9.0",
     "mocha": "*",
     "express": "4.13.3",
+    "cookie-parser": "1.4.0",
+    "body-parser": "1.14.1",
     "ejs": "2.3.3",
-    "ncp": "2.0.0"
+    "ncp": "2.0.0",
+    "mongodb": "2.0.48",
+    "q": "^1.4.1"
   },
   "scripts": {
     "test": "mocha",
@@ -16,6 +20,7 @@
     "hotCoffee": "coffee -o dist/ -cw src/",
     "hotTests": "coffee -cwo spec/ spec/",
     "postinstall": "npm run brewCoffee",
+    "prestart": "ncp src/ dist/",
     "start": "node ./dist/server/index"
   }
 }
