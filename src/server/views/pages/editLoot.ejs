@@ -28,7 +28,7 @@
 
       <div class="row">
         <div class="twelve column">
-          <form action="/loot/add" method="POST">
+          <form action="/loot/edit" method="POST">
 
             <div class="row">
               <div class="six columns">
@@ -77,6 +77,7 @@
               </div>
             </div>
 
+            <input type="hidden" name="description" value="<%= lootContainer._id %>">
             <input class="button-primary" type="submit" value="Submit">
           </form>
         </div>

@@ -50,7 +50,7 @@ handle = (app) ->
   )
 
   app.post('/loot/edit', (request, response) ->
-    
+    lootId = request.body._id
   )
 
 exports = this
