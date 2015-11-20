@@ -11,7 +11,7 @@
       <div class="row">
           <div class="eight columns">
             <div id="content">
-              <h3>Welcome home, <%= user %></h3>
+              <h3>Add loot...</h3>
             </div>
           </div>
             <div class="four columns text-right">
@@ -28,24 +28,19 @@
 
       <div class="row">
         <div class="twelve column">
-
-          <% if (loot.length > 0) { %>
-
-            <% loot.forEach(function(lootItem){  %>
-              <div class="row">
-                <div class="twelve column">
-                  <%= lootItem.description %>
-                </div>
+          <form action="/loot/add" method="POST">
+            <div class="row">
+              <div class="six columns">
+                <label for="lootType">Type</label>
+                <select class="u-full-width" id="lootType" name="lootType">
+                  <% lootType.foreach(function(type) {  %>
+                    <option value="<%= type.id %>"><%= type.name %></option>
+                  <% }); %>
+                </select>
               </div>
-            <% }); %>
-
-          <% } else { %>
-
-            <p>
-              You don't have any loot!
-            </p>
-
-          <% } %>
+            </div>
+            <input class="button-primary" type="submit" value="Submit">
+          </form>
         </div>
       </div>
     </div>

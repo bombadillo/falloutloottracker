@@ -17,35 +17,34 @@
             <div class="four columns text-right">
               <a href="/logout" class="button button-primary">Logout</a>
             </div>
-          </div>
-      </div>
-
-      <div class="row">
-        <div class="twelve columns text-center">
-          <a href="/addLoot" class="button button-primary">Add loot</a>
         </div>
-      </div>
+        <div class="row">
+          <div class="twelve columns">
+            <a href="/loot/add" class="button button-primary">Add loot</a>
+          </div>
+        </div>
 
-      <div class="row">
-        <div class="twelve column">
+        <div class="row">
+          <div class="twelve columns">
 
-          <% if (loot.length > 0) { %>
+            <% if (loot.length > 0) { %>
 
-            <% loot.forEach(function(lootItem){  %>
-              <div class="row">
-                <div class="twelve column">
-                  <%= lootItem.description %>
+              <% loot.forEach(function(lootItem){  %>
+                <div class="row">
+                  <div class="twelve column">
+                    <%= lootItem.description %>
+                  </div>
                 </div>
-              </div>
-            <% }); %>
+              <% }); %>
 
-          <% } else { %>
+            <% } else { %>
 
-            <p>
-              You don't have any loot!
-            </p>
+              <p>
+                You don't have any loot!
+              </p>
 
-          <% } %>
+            <% } %>
+          </div>
         </div>
       </div>
     </div>
