@@ -1,44 +1,16 @@
-userSessionHandler = require './userSessionHandler'
-lootInfoRetriever = require './lootInfoRetriever'
-lootTypeRetriever = require './lootTypeRetriever'
+indexRouteHandler = require '../routeHandlers/index'
+loginRouteHandler = require '../routeHandlers/login'
+logoutRouteHandler = require '../routeHandlers/logout'
+registerRouteHandler = require '../routeHandlers/register'
+lootRouteHandler = require '../routeHandlers/loot'
 
 handleRequests = (app) ->
-  app.get('/', (request, response) ->
-    user = userSessionHandler.getUser request
-    if user
-      lootInfoRetriever.getAll(user).then (loot) ->
-        console.log 'displaying loot'
-        response.render('pages/index', user: user, loot: loot)
-    else
-      response.render('pages/login')
-  )
 
-  app.get('/login', (request, response) ->
-    user = userSessionHandler.getUser request
-    if user
-      response.redirect '/'
-    else
-      response.render('pages/login')
-  )
-
-  app.post('/login', (request, response) ->
-    response.cookie 'vaultDweller', request.body.vaultDweller
-    response.redirect '/'
-  )
-
-  app.get('/logout', (request, response) ->
-    user = userSessionHandler.getUser request
-    if user
-       response.clearCookie 'vaultDweller'
-      response.redirect '/'
-  )
-
-  app.get('/loot/add', (request, response) ->
-    user = userSessionHandler.getUser request
-    if user
-      lootTypeRetriever.getAll().then (lootTypes) ->
-      response.render 'pages/addLoot', lootTypes: lootTypes
-  )
+  indexRouteHandler.handle app
+  loginRouteHandler.handle app
+  logoutRouteHandler.handle app
+  registerRouteHandler.handle app
+  lootRouteHandler.handle app
 
 exports = this
 exports.handleRequests = handleRequests

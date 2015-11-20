@@ -5,3 +5,8 @@
 .text-center {
   text-align: center;
 }
+
+.lootItem {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}

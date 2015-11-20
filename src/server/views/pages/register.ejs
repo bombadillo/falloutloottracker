@@ -1,0 +1,37 @@
+<html>
+  <head>
+    <link href='//fonts.googleapis.com/css?family=Raleway:400,300,600' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css" media="screen" title="no title" charset="utf-8">
+    <link rel="stylesheet" href="styles/index.css" media="screen" title="no title" charset="utf-8">
+    <title>Login</title>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="row">
+          <div class="twelve column">
+            <div id="content">
+              <h3>Welcome, Vault Dweller...</h3>
+              <h4>Please register your details</h4>
+
+              <% if (message) { %>
+
+                <h6><%= message %></h6>
+
+              <% } %>
+
+              <form action="/register" method="POST">
+                <div class="row">
+                  <div class="six columns">
+                    <label for="vaultDweller">Name</label>
+                    <input class="u-full-width" type="text" name="vaultDweller">
+                  </div>
+                </div>
+                <input class="button-primary" type="submit" value="Submit">
+              </form>
+            </div>
+          </div>
+        </div>
+    </div>
+  </body>
+</html>

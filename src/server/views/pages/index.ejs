@@ -11,7 +11,7 @@
       <div class="row">
           <div class="eight columns">
             <div id="content">
-              <h3>Welcome home, <%= user %></h3>
+              <h3>Welcome home, <%= user.name %></h3>
             </div>
           </div>
             <div class="four columns text-right">
@@ -29,13 +29,27 @@
 
             <% if (loot.length > 0) { %>
 
-              <% loot.forEach(function(lootItem){  %>
-                <div class="row">
-                  <div class="twelve column">
-                    <%= lootItem.description %>
+              <% for (var i = 0; i < loot.length; i++) {  %>
+              <div class="row lootItem">
+                <div class="twelve column">
+                  <div class="row">
+                    <div class="twelve column">
+                      <strong>Type</strong> <%= lootTypes[loot[i].lootType] %>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="twelve column">
+                      <strong>Description</strong> <%= loot[i].description %>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="twelve column">
+                      <strong>Location</strong> <%= loot[i].location %>
+                    </div>
                   </div>
                 </div>
-              <% }); %>
+              </div>
+              <% } %>
 
             <% } else { %>
 
