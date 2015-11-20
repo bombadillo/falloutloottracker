@@ -1,7 +1,6 @@
 lootInfoRetriever = require '../services/lootInfoRetriever'
 userSessionHandler = require '../services/userSessionHandler'
 lootTypeRetriever = require '../services/lootTypeRetriever'
-lootTypeConvertor = require '../services/lootTypeConvertor'
 
 handle = (app) ->
   app.get('/', (request, response) ->
@@ -11,10 +10,9 @@ handle = (app) ->
         lootInfoRetriever.getAll(user).then (loot) ->
           lootTypeRetriever.getAll().then (lootTypes) ->
             console.log 'displaying loot'
-            aLootTypes = lootTypeConvertor.toArray lootTypes
             response.render(
               'pages/index',
-              user: user, loot: loot, lootTypes: aLootTypes
+              user: user, loot: loot, lootTypes: lootTypes
             )
       else
         response.redirect('/login')
