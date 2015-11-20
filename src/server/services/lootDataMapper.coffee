@@ -5,6 +5,7 @@ map = (raw, user) ->
     lootLevel: raw.lootLevel
     description: raw.description
     location: raw.location
+    lootStatus: raw.lootStatus
     user: user._id
   console.log raw
   return data

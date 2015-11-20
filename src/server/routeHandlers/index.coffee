@@ -10,7 +10,7 @@ handle = (app) ->
       if user
         lootInfoRetriever.getAll(user).then (loot) ->
           lootTypeRetriever.getAll(true).then (lootTypes) ->
-            lootStatusRetriever.getAll().then (lootStatuses) ->
+            lootStatusRetriever.getAll(true).then (lootStatuses) ->
               console.log 'displaying loot'
               response.render(
                 'pages/index',
