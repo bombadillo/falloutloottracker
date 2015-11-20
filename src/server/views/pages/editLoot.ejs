@@ -3,7 +3,7 @@
     <link href='//fonts.googleapis.com/css?family=Raleway:400,300,600' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css" media="screen" title="no title" charset="utf-8">
     <link rel="stylesheet" href="styles/index.css" media="screen" title="no title" charset="utf-8">
-    <title>Add Loot</title>
+    <title>Edit Loot</title>
   </head>
 
   <body>
@@ -66,14 +66,14 @@
             <div class="row">
               <div class="six columns">
                 <label for="description">description</label>
-                <input class="u-full-width" type="text" name="description">
+                <input class="u-full-width" type="text" name="description" value="<%= lootContainer.description %>">
               </div>
             </div>
 
             <div class="row">
               <div class="six columns">
                 <label for="location">location</label>
-                <input class="u-full-width" type="text" name="location">
+                <input class="u-full-width" type="text" name="location" value="<%= lootContainer.location %>">
               </div>
             </div>
 

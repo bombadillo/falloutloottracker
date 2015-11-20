@@ -1,4 +1,5 @@
 dbConnector = require './dbConnector'
+BSON = require('bson').BSONPure
 q = require 'q'
 
 getAll = (collection, params) ->
@@ -30,6 +31,20 @@ getOne = (collection, params) ->
       db.close()
   return deferred.promise
 
+getById = (collection, id) ->
+  console.log id
+  o_id = new BSON.ObjectID id
+  deferred = q.defer()
+  dbConnector.connect().then (db) ->
+    collection = db.collection(collection)
+    collection.find(_id: o_id).toArray (err, result)->
+      if err
+        console.log err
+      else
+        deferred.resolve result
+      db.close()
+  return deferred.promise
+
 insert = (collection, data) ->
   deferred = q.defer()
   dbConnector.connect().then (db)->
@@ -47,3 +62,4 @@ exports = this
 exports.getAll = getAll
 exports.getOne = getOne
 exports.insert = insert
+exports.getById = getById
