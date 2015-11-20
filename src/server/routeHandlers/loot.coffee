@@ -3,6 +3,7 @@ lootTypeRetriever = require '../services/lootTypeRetriever'
 lootLevelRetriever = require '../services/lootLevelRetriever'
 lootContainerHandler = require '../services/lootContainerHandler'
 lootDataMapper = require '../services/lootDataMapper'
+lootStatusRetriever = require '../services/lootStatusRetriever'
 
 handle = (app) ->
   app.get('/loot/add', (request, response) ->
@@ -10,11 +11,13 @@ handle = (app) ->
     if user
       lootTypeRetriever.getAll().then (lootTypes) ->
         lootLevelRetriever.getAll().then (lootLevels) ->
-          response.render(
-            'pages/addLoot'
-            lootTypes: lootTypes
-            lootLevels: lootLevels
-          )
+          lootStatusRetriever.getAll().then (lootStatuses) ->
+            response.render(
+              'pages/addLoot'
+              lootTypes: lootTypes
+              lootLevels: lootLevels
+              lootStatuses: lootStatuses
+            )
   )
 
   app.post('/loot/add', (request, response) ->

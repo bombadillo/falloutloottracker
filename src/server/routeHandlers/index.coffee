@@ -1,6 +1,7 @@
 lootInfoRetriever = require '../services/lootInfoRetriever'
 userSessionHandler = require '../services/userSessionHandler'
 lootTypeRetriever = require '../services/lootTypeRetriever'
+lootStatusRetriever = require '../services/lootStatusRetriever'
 
 handle = (app) ->
   app.get('/', (request, response) ->
@@ -8,12 +9,16 @@ handle = (app) ->
     userSessionHandler.getUserByName(userName).then (user) ->
       if user
         lootInfoRetriever.getAll(user).then (loot) ->
-          lootTypeRetriever.getAll().then (lootTypes) ->
-            console.log 'displaying loot'
-            response.render(
-              'pages/index',
-              user: user, loot: loot, lootTypes: lootTypes
-            )
+          lootTypeRetriever.getAll(true).then (lootTypes) ->
+            lootStatusRetriever.getAll().then (lootStatuses) ->
+              console.log 'displaying loot'
+              response.render(
+                'pages/index',
+                  user: user
+                  loot: loot
+                  lootTypes: lootTypes
+                  lootStatuses: lootStatuses
+              )
       else
         response.redirect('/login')
   )
