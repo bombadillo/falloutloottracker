@@ -30,7 +30,7 @@
             <% if (loot.length > 0) { %>
 
               <% for (var i = 0; i < loot.length; i++) {  %>
-              <div class="row lootItem">
+              <div class="row lootItem <%= lootStatuses[loot[i].lootStatus] %>">
                 <div class="twelve column">
                   <div class="row">
                     <div class="twelve column">
