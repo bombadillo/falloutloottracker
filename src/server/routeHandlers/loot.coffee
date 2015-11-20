@@ -49,5 +49,9 @@ handle = (app) ->
               )
   )
 
+  app.post('/loot/edit', (request, response) ->
+    
+  )
+
 exports = this
 exports.handle = handle
