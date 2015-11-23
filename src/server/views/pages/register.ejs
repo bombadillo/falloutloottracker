@@ -1,11 +1,9 @@
 <% include common/header/header %>
 
-    <div class="container">
       <div class="row">
-          <div class="twelve column">
-            <div id="content">
+          <div class="col-xs-12">
               <h4>Welcome, Vault Dweller...</h4>
-              <h5>Please register your details</h5>
+              <div class="alert alert-info">Please register your details</div>
 
               <% if (message) { %>
 
@@ -14,17 +12,15 @@
               <% } %>
 
               <form action="/register" method="POST">
-                <div class="row">
-                  <div class="six columns">
+                <div class="form-group">
                     <label for="vaultDweller">Name</label>
-                    <input class="u-full-width" type="text" name="vaultDweller">
-                  </div>
+                    <input class="form-control" type="text" name="vaultDweller">
                 </div>
-                <input class="button-primary" type="submit" value="Submit">
+                <div class="form-group">
+                  <input class="btn btn-primary" type="submit" value="Submit">
+                </div>
               </form>
             </div>
           </div>
-        </div>
-    </div>
 
 <% include common/footer/footer %>
