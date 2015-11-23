@@ -2,23 +2,25 @@ dbHandler = require './dbHandler'
 q = require 'q'
 lootTypeConvertor = require './lootTypeConvertor'
 
-getAll = (bConvert) ->
+getAll = (bConvert, filter) ->
   deferred = q.defer()
-  dbHandler.getAll('LootContainerType').then (lootTypes) ->
+  dbHandler.getAll('LootContainerType', filter).then (lootTypes) ->
     console.log 'got loot types'
     if bConvert
       lootTypes = lootTypeConvertor.toArray lootTypes
     deferred.resolve lootTypes
   return deferred.promise
 
-getById = (id) ->
+getTypeId = (typeName) ->
   deferred = q.defer()
-  console.log 'looking for '
-  dbHandler.getOne('LootContainerType', _id: id).then(lootType) ->
-    console.log 'got loot type'
-    deferred.resolve lootType
+  console.log "getting #{typeName}"
+  if typeName
+    getAll(false, name: typeName).then (lootType) ->
+      deferred.resolve lootType[0]._id.toString()
+  else
+    deferred.resolve null
   return deferred.promise
 
 exports = this
 exports.getAll = getAll
-exports.getById = getById
+exports.getTypeId = getTypeId

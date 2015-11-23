@@ -1,8 +1,33 @@
 <% include common/header/header %>
     <div class="container">
         <div class="row">
-          <div class="twelve columns">
+          <div class="four columns">
             <a href="/loot/add" class="button button-primary">Add loot</a>
+          </div>
+          <div class="eight columns">
+            <form action="/loot" method="GET">
+              <div class="row">
+                <div class="three columns">
+                  <select class="u-full-width" id="lootType" name="lootType">
+                    <option value="">Loot type</option>
+                    <% for (i in lootTypes) {  %>
+                      <option value="<%= lootTypes[i] %>"><%= lootTypes[i] %></option>
+                    <% } %>
+                  </select>
+                </div>
+                <div class="three columns">
+                  <select class="u-full-width" id="lootLevel" name="lootLevel">
+                    <option value="">Loot level</option>
+                    <% for (i in lootLevels) {  %>
+                      <option value="<%= lootLevels[i] %>"><%= lootLevels[i] %></option>
+                    <% } %>
+                  </select>
+                </div>
+                <div class="five columns">
+                  <input class="button-primary" type="submit" value="Filter">
+                </div>
+              </div>
+            </form>
           </div>
         </div>
 

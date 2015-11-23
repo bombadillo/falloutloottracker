@@ -5,27 +5,29 @@ lootContainerHandler = require '../services/lootContainerHandler'
 lootDataMapper = require '../services/lootDataMapper'
 lootStatusRetriever = require '../services/lootStatusRetriever'
 lootInfoRetriever = require '../services/lootInfoRetriever'
+lootFilterParser = require '../services/lootFilterParser'
 
 handle = (app) ->
   app.get('/loot', (request, response) ->
     userName = request.cookies.vaultDweller
     userSessionHandler.getUserByName(userName).then (user) ->
       if user
-        filter = request.query
-        filter.user = user._id
-        lootInfoRetriever.getAll(filter).then (loot) ->
-          lootTypeRetriever.getAll(true).then (lootTypes) ->
-            lootStatusRetriever.getAll(true).then (lootStatuses) ->
-              lootLevelRetriever.getAll(true).then (lootLevels) ->
-                console.log 'displaying loot'
-                response.render(
-                  'pages/loot',
-                    user: user
-                    loot: loot
-                    lootTypes: lootTypes
-                    lootStatuses: lootStatuses
-                    lootLevels: lootLevels
-                )
+        filter = lootFilterParser.parse(request.query).then (filter) ->
+          filter.user = user._id
+          lootInfoRetriever.getAll(filter).then (loot) ->
+            lootTypeRetriever.getAll(true).then (lootTypes) ->
+              console.log lootTypes
+              lootStatusRetriever.getAll(true).then (lootStatuses) ->
+                lootLevelRetriever.getAll(true).then (lootLevels) ->
+                  console.log 'displaying loot'
+                  response.render(
+                    'pages/loot',
+                      user: user
+                      loot: loot
+                      lootTypes: lootTypes
+                      lootStatuses: lootStatuses
+                      lootLevels: lootLevels
+                  )
       else
         response.redirect('/login')
   )
@@ -51,7 +53,7 @@ handle = (app) ->
       if user
         data = lootDataMapper.map request.body, user
         lootContainerHandler.insert(data).then (result) ->
-          response.redirect '/'
+          response.redirect '/loot'
   )
 
   app.get('/loot/edit/:id', (request, response) ->
