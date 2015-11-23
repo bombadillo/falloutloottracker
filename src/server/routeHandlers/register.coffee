@@ -16,7 +16,7 @@ handle = (app) ->
 
   app.post('/register', (request, response) ->
     userName = request.body.vaultDweller
-    userSessionHandler.doesUserExist(userName).then (user) ->
+    userSessionHandler.getUserByName(userName).then (user) ->
       if user
         message = "Username #{request.body.vaultDweller} already exists."
         response.render('pages/register', message: message)

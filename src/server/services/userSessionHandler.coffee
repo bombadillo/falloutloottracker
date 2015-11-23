@@ -1,7 +1,7 @@
 dbHandler = require './dbHandler'
 q = require 'q'
 
-doesUserExist = (userName) ->
+getUserByName = (userName) ->
   console.log "checking user #{userName}"
   deferred = q.defer()
   user = dbHandler.getOne('User', name: userName).then (user) ->
@@ -13,6 +13,5 @@ isLoggedIn = (request) ->
   return request.cookies.vaultDweller
 
 exports = this
-exports.getUserByName = doesUserExist
-exports.doesUserExist = doesUserExist
+exports.getUserByName = getUserByName
 exports.isLoggedIn = isLoggedIn

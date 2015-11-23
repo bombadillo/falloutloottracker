@@ -11,7 +11,7 @@ handle = (app) ->
 
   app.post('/login', (request, response) ->
     userName = request.body.vaultDweller
-    userSessionHandler.doesUserExist(userName).then (user) ->
+    userSessionHandler.getUserByName(userName).then (user) ->
       console.log 'got user'
       if user
         response.cookie 'vaultDweller', request.body.vaultDweller
