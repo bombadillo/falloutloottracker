@@ -18,6 +18,7 @@ handle = (app) ->
               lootTypes: lootTypes
               lootLevels: lootLevels
               lootStatuses: lootStatuses
+              user: user
             )
   )
 
@@ -45,6 +46,7 @@ handle = (app) ->
                 lootTypes: lootTypes
                 lootLevels: lootLevels
                 lootStatuses: lootStatuses
+                user: user
               )
   )
 

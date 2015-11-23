@@ -6,7 +6,7 @@ handle = (app) ->
     if user
       response.redirect '/'
     else
-      response.render('pages/login')
+      response.render('pages/login', user: user)
   )
 
   app.post('/login', (request, response) ->

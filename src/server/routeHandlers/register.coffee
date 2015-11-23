@@ -7,7 +7,11 @@ handle = (app) ->
     if user
       response.redirect '/'
     else
-      response.render('pages/register', message: undefined)
+      response.render(
+        'pages/register',
+        message: undefined
+        user: user
+      )
   )
 
   app.post('/register', (request, response) ->
