@@ -13,7 +13,6 @@ handle = (app) ->
     userName = request.body.vaultDweller
     userSessionHandler.doesUserExist(userName).then (user) ->
       console.log 'got user'
-      console.log user
       if user
         response.cookie 'vaultDweller', request.body.vaultDweller
         response.redirect '/'
