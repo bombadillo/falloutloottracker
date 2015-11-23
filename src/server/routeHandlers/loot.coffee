@@ -7,6 +7,27 @@ lootStatusRetriever = require '../services/lootStatusRetriever'
 lootInfoRetriever = require '../services/lootInfoRetriever'
 
 handle = (app) ->
+  app.get('/loot', (request, response) ->
+    userName = request.cookies.vaultDweller
+    userSessionHandler.getUserByName(userName).then (user) ->
+      if user
+        lootInfoRetriever.getAll(user).then (loot) ->
+          lootTypeRetriever.getAll(true).then (lootTypes) ->
+            lootStatusRetriever.getAll(true).then (lootStatuses) ->
+              lootLevelRetriever.getAll(true).then (lootLevels) ->
+                console.log 'displaying loot'
+                response.render(
+                  'pages/loot',
+                    user: user
+                    loot: loot
+                    lootTypes: lootTypes
+                    lootStatuses: lootStatuses
+                    lootLevels: lootLevels
+                )
+      else
+        response.redirect('/login')
+  )
+
   app.get('/loot/add', (request, response) ->
     user = userSessionHandler.isLoggedIn request
     if user

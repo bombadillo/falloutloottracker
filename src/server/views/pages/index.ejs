@@ -1,64 +1,7 @@
 <% include common/header/header %>
+
     <div class="container">
-        <div class="row">
-          <div class="twelve columns">
-            <a href="/loot/add" class="button button-primary">Add loot</a>
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="twelve columns">
-
-            <% if (loot.length > 0) { %>
-
-              <% for (var i = 0; i < loot.length; i++) {  %>
-              <a href="/loot/edit/<%= loot[i]._id %>">
-              <div class="row lootItem <%= lootStatuses[loot[i].lootStatus] %>">
-                <div class="twelve column">
-                  <div class="row">
-                    <div class="twelve column">
-                      <strong>Type</strong> <%= lootTypes[loot[i].lootType] %>
-                    </div>
-                  </div>
-
-                  <div class="row">
-                    <div class="twelve column">
-                      <strong>Level</strong> <%= lootLevels[loot[i].lootLevel] %>
-                    </div>
-                  </div>
-
-                  <div class="row">
-                    <div class="twelve column">
-                      <strong>Status</strong> <%= lootStatuses[loot[i].lootStatus] %>
-                    </div>
-                  </div>
-
-                  <div class="row">
-                    <div class="twelve column">
-                      <strong>Description</strong> <%= loot[i].description %>
-                    </div>
-                  </div>
-
-                  <div class="row">
-                    <div class="twelve column">
-                      <strong>Location</strong> <%= loot[i].location %>
-                    </div>
-                  </div>
-
-                </div>
-              </div>
-            </a>
-              <% } %>
-
-            <% } else { %>
-
-              <p>
-                You don't have any loot!
-              </p>
-
-            <% } %>
-          </div>
-        </div>
-      </div>
+      <h4>Home</h4>
+    </div>
 
 <% include common/footer/footer %>
