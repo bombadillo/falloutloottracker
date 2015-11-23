@@ -1,10 +1,9 @@
 dbHandler = require './dbHandler'
 q = require 'q'
 
-getAll = (user) ->
+getAll = (filter) ->
   deferred = q.defer()
-  console.log user
-  dbHandler.getAll('LootContainer', user: user._id).then (loot) ->
+  dbHandler.getAll('LootContainer', filter).then (loot) ->
     console.log 'got loot'
     deferred.resolve loot
   return deferred.promise

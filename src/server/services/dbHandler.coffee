@@ -22,7 +22,6 @@ getOne = (collection, params) ->
   dbConnector.connect().then (db) ->
     collection = db.collection(collection)
     console.log 'getting collection'
-    console.log params
     collection.findOne params, (err, result) ->
       if err
         console.log err
@@ -32,7 +31,6 @@ getOne = (collection, params) ->
   return deferred.promise
 
 getById = (collection, id) ->
-  console.log id
   o_id = new BSON.ObjectID id
   deferred = q.defer()
   dbConnector.connect().then (db) ->

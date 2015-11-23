@@ -5,7 +5,6 @@ register = (userName) ->
   deferred = q.defer()
   dbHandler.insert('User', name: userName).then (result) ->
     console.log 'register result is'
-    console.log result
     deferred.resolve result
   return deferred.promise
 

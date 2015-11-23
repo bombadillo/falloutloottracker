@@ -16,7 +16,6 @@ getById = (id) ->
   console.log 'looking for '
   dbHandler.getOne('LootContainerType', _id: id).then(lootType) ->
     console.log 'got loot type'
-    console.log lootType
     deferred.resolve lootType
   return deferred.promise
 

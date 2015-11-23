@@ -11,7 +11,9 @@ handle = (app) ->
     userName = request.cookies.vaultDweller
     userSessionHandler.getUserByName(userName).then (user) ->
       if user
-        lootInfoRetriever.getAll(user).then (loot) ->
+        filter = request.query
+        filter.user = user._id
+        lootInfoRetriever.getAll(filter).then (loot) ->
           lootTypeRetriever.getAll(true).then (lootTypes) ->
             lootStatusRetriever.getAll(true).then (lootStatuses) ->
               lootLevelRetriever.getAll(true).then (lootLevels) ->
@@ -54,7 +56,6 @@ handle = (app) ->
 
   app.get('/loot/edit/:id', (request, response) ->
     lootId = request.params.id
-    console.log lootId
     userName = request.cookies.vaultDweller
     userSessionHandler.getUserByName(userName).then (user) ->
       lootInfoRetriever.getSingle(lootId).then (lootContainer) ->
