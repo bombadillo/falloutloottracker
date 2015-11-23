@@ -27,7 +27,7 @@
     "hotTests": "coffee -cwo spec/ spec/",
     "hotCss": "lessc src/client/styles/index.less dist/client/styles/index.css",
     "postinstall": "npm run brewCoffee",
-    "prestart": "ncp src/ dist/",
+    "prestart": "ncp src/ dist/ && npm run hotCss",
     "start": "node ./dist/server/index"
   }
 }

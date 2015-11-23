@@ -12,7 +12,6 @@ getAll = (collection, params) ->
         console.log err
       else
         deferred.resolve result
-      db.close()
   return deferred.promise
 
 getOne = (collection, params) ->
@@ -27,7 +26,6 @@ getOne = (collection, params) ->
         console.log err
       else
         deferred.resolve result
-      db.close()
   return deferred.promise
 
 getById = (collection, id) ->
@@ -40,7 +38,6 @@ getById = (collection, id) ->
         console.log err
       else
         deferred.resolve result
-      db.close()
   return deferred.promise
 
 insert = (collection, data) ->
@@ -68,7 +65,6 @@ update = (collection, data) ->
         console.log err
       else
         deferred.resolve result
-      db.close()
     )
   return deferred.promise
 

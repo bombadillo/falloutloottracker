@@ -16,7 +16,6 @@ handle = (app) ->
           filter.user = user._id
           lootInfoRetriever.getAll(filter).then (loot) ->
             lootTypeRetriever.getAll(true).then (lootTypes) ->
-              console.log lootTypes
               lootStatusRetriever.getAll(true).then (lootStatuses) ->
                 lootLevelRetriever.getAll(true).then (lootLevels) ->
                   console.log 'displaying loot'
@@ -64,6 +63,7 @@ handle = (app) ->
         lootTypeRetriever.getAll().then (lootTypes) ->
           lootLevelRetriever.getAll().then (lootLevels) ->
             lootStatusRetriever.getAll().then (lootStatuses) ->
+              console.log 'render'
               response.render(
                 'pages/editLoot',
                 lootContainer: lootContainer
