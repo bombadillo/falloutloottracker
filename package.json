@@ -13,13 +13,19 @@
     "ncp": "2.0.0",
     "mongodb": "2.0.48",
     "q": "^1.4.1",
-    "bson": "0.4.19"
+    "bson": "0.4.19",
+    "bootstrap": "3.3.5",
+    "less": "^2.5.3"
+  },
+  "dev-dependencies": {
+
   },
   "scripts": {
     "test": "mocha",
     "brewCoffee": "coffee -o dist/ -c src/ && ncp src/ dist/",
     "hotCoffee": "coffee -o dist/ -cw src/",
     "hotTests": "coffee -cwo spec/ spec/",
+    "hotCss": "lessc src/client/styles/index.less dist/client/styles/index.css",
     "postinstall": "npm run brewCoffee",
     "prestart": "ncp src/ dist/",
     "start": "node ./dist/server/index"
