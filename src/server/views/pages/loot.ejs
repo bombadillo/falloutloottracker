@@ -1,72 +1,74 @@
 <% include common/header/header %>
-    <div class="container">
+
         <div class="row">
-          <div class="four columns">
-            <a href="/loot/add" class="button button-primary">Add loot</a>
+          <div class="col-xs-4">
+            <a href="/loot/add" class="btn btn-primary">Add loot</a>
           </div>
-          <div class="eight columns">
-            <form action="/loot" method="GET">
-              <div class="row">
-                <div class="three columns">
-                  <select class="u-full-width" id="lootType" name="lootType">
-                    <option value="">Loot type</option>
-                    <% for (i in lootTypes) {  %>
-                      <option value="<%= lootTypes[i] %>"><%= lootTypes[i] %></option>
-                    <% } %>
-                  </select>
-                </div>
-                <div class="three columns">
-                  <select class="u-full-width" id="lootLevel" name="lootLevel">
-                    <option value="">Loot level</option>
-                    <% for (i in lootLevels) {  %>
-                      <option value="<%= lootLevels[i] %>"><%= lootLevels[i] %></option>
-                    <% } %>
-                  </select>
-                </div>
-                <div class="five columns">
-                  <input class="button-primary" type="submit" value="Filter">
-                </div>
+          <div class="col-xs-8">
+            <form class="form-inline" action="/loot" method="GET">
+
+              <div class="form-group">
+                <select class="form-control" id="lootType" name="lootType">
+                  <option value="">Loot type</option>
+                  <% for (i in lootTypes) {  %>
+                    <option value="<%= lootTypes[i] %>"><%= lootTypes[i] %></option>
+                  <% } %>
+                </select>
               </div>
+
+              <div class="form-group">
+                <select class="form-control" id="lootLevel" name="lootLevel">
+                  <option value="">Loot level</option>
+                  <% for (i in lootLevels) {  %>
+                    <option value="<%= lootLevels[i] %>"><%= lootLevels[i] %></option>
+                  <% } %>
+                </select>
+              </div>
+
+                <div class="form-group">
+                  <div class="col-sm-offset-2 col-sm-10">
+                    <button type="submit" class="btn btn-default">Filter</button>
+                  </div>
+                </div>
+
             </form>
           </div>
         </div>
 
         <div class="row">
-          <div class="twelve columns">
+          <div class="col-xs-12">
 
             <% if (loot.length > 0) { %>
 
               <% for (var i = 0; i < loot.length; i++) {  %>
               <a href="/loot/edit/<%= loot[i]._id %>">
               <div class="row lootItem <%= lootStatuses[loot[i].lootStatus] %>">
-                <div class="twelve column">
+                <div class="col-xs-12">
                   <div class="row">
-                    <div class="twelve column">
-                      <strong>Type</strong> <%= lootTypes[loot[i].lootType] %>
-                    </div>
-                  </div>
+                    <div class="col-xs-12">
+                      <div class="panel
+                      <% if (lootStatuses[loot[i].lootStatus] === 'Locked') { %>panel-danger<%} %>
+                      <% if (lootStatuses[loot[i].lootStatus] === 'Unlocked') { %>panel-success<%} %>">
+                        <div class="panel-heading">
+                          <h3 class="panel-title">
+                            <%= lootLevels[loot[i].lootLevel] %> <%= lootTypes[loot[i].lootType] %>
+                            <span class="label label-info pull-right"><%= lootStatuses[loot[i].lootStatus] %></span>
+                          </h3>
+                        </div>
+                        <div class="panel-body">
+                          <div class="row">
+                            <div class="col-xs-12">
+                              <strong>Description</strong> <%= loot[i].description %>
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="col-xs-12">
+                              <strong>Location</strong> <%= loot[i].location %>
+                            </div>
+                          </div>
 
-                  <div class="row">
-                    <div class="twelve column">
-                      <strong>Level</strong> <%= lootLevels[loot[i].lootLevel] %>
-                    </div>
-                  </div>
-
-                  <div class="row">
-                    <div class="twelve column">
-                      <strong>Status</strong> <%= lootStatuses[loot[i].lootStatus] %>
-                    </div>
-                  </div>
-
-                  <div class="row">
-                    <div class="twelve column">
-                      <strong>Description</strong> <%= loot[i].description %>
-                    </div>
-                  </div>
-
-                  <div class="row">
-                    <div class="twelve column">
-                      <strong>Location</strong> <%= loot[i].location %>
+                        </div>
+                      </div>
                     </div>
                   </div>
 
@@ -77,13 +79,12 @@
 
             <% } else { %>
 
-              <p>
+              <div class="alert">
                 You don't have any loot!
-              </p>
+              </div>
 
             <% } %>
           </div>
         </div>
-      </div>
 
 <% include common/footer/footer %>
