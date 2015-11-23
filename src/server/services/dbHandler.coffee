@@ -58,18 +58,20 @@ insert = (collection, data) ->
         deferred.resolve true
   return deferred.promise
 
-update = (collection, id) ->
-  console.log id
-  o_id = new BSON.ObjectID id
+update = (collection, data) ->
+  console.log "updating #{data._id}"
+  o_id = new BSON.ObjectID data._id
+  delete data._id
   deferred = q.defer()
   dbConnector.connect().then (db) ->
     collection = db.collection(collection)
-    collection.updateOne(_id: o_id).toArray (err, result)->
+    collection.updateOne(_id: o_id, data, (err, result) ->
       if err
         console.log err
       else
         deferred.resolve result
       db.close()
+    )
   return deferred.promise
 
 
@@ -78,3 +80,4 @@ exports.getAll = getAll
 exports.getOne = getOne
 exports.insert = insert
 exports.getById = getById
+exports.update = update

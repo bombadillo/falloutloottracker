@@ -39,7 +39,6 @@ handle = (app) ->
         lootTypeRetriever.getAll().then (lootTypes) ->
           lootLevelRetriever.getAll().then (lootLevels) ->
             lootStatusRetriever.getAll().then (lootStatuses) ->
-              console.log lootContainer
               response.render(
                 'pages/editLoot',
                 lootContainer: lootContainer
@@ -50,7 +49,11 @@ handle = (app) ->
   )
 
   app.post('/loot/edit', (request, response) ->
-    lootId = request.body._id
+    userName = request.cookies.vaultDweller
+    userSessionHandler.getUserByName(userName).then (user) ->
+      data = lootDataMapper.map request.body, user
+      lootContainerHandler.update(data).then (result) ->
+        response.redirect request.get 'referer'
   )
 
 exports = this
