@@ -35,7 +35,7 @@
                 <label for="lootType">Type</label>
                 <select class="u-full-width" id="lootType" name="lootType">
                   <% for (var i = 0; i < lootTypes.length; i++) {  %>
-                    <option value="<%= lootTypes[i]._id %>"><%= lootTypes[i].name %></option>
+                    <option <% if(lootContainer.lootType == lootTypes[i]._id) { %>selected="selected"<% } %> value="<%= lootTypes[i]._id %>"><%= lootTypes[i].name %></option>
                   <% } %>
                 </select>
               </div>
@@ -46,7 +46,7 @@
                 <label for="lootLevel">Level</label>
                 <select class="u-full-width" id="lootLevel" name="lootLevel">
                   <% for (var i = 0; i < lootLevels.length; i++) {  %>
-                    <option value="<%= lootLevels[i]._id %>"><%= lootLevels[i].name %></option>
+                    <option <% if(lootContainer.lootLevel == lootLevels[i]._id) { %>selected="selected"<% } %> value="<%= lootLevels[i]._id %>"><%= lootLevels[i].name %></option>
                   <% } %>
                 </select>
               </div>
@@ -57,7 +57,7 @@
                 <label for="lootStatus">Status</label>
                 <select class="u-full-width" id="lootLevel" name="lootStatus">
                   <% for (var i = 0; i < lootStatuses.length; i++) {  %>
-                    <option value="<%= lootStatuses[i]._id %>"><%= lootStatuses[i].name %></option>
+                    <option <% if(lootContainer.lootStatus == lootStatuses[i]._id) { %>selected="selected"<% } %> value="<%= lootStatuses[i]._id %>"><%= lootStatuses[i].name %></option>
                   <% } %>
                 </select>
               </div>
