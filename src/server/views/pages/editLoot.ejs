@@ -1,21 +1,12 @@
 <% include common/header/header %>
 
-    <div class="container">
-
-      <div class="row">
-        <div class="twelve columns text-center">
-          <a href="/" class="button button-primary">Home</a>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="twelve column">
+      <div class="form-group">
+        <div class="col-xs-12">
           <form action="/loot/edit" method="POST">
 
-            <div class="row">
-              <div class="six columns">
+            <div class="form-group">
                 <label for="lootType">Type</label>
-                <select class="u-full-width" id="lootType" name="lootType">
+                <select class="form-control" id="lootType" name="lootType">
                   <% for (var i = 0; i < lootTypes.length; i++) {  %>
                     <option <% if(lootContainer.lootType == lootTypes[i]._id) { %>selected="selected"<% } %> value="<%= lootTypes[i]._id %>"><%= lootTypes[i].name %></option>
                   <% } %>
@@ -23,47 +14,39 @@
               </div>
             </div>
 
-            <div class="row">
-              <div class="six columns">
+            <div class="form-group">
                 <label for="lootLevel">Level</label>
-                <select class="u-full-width" id="lootLevel" name="lootLevel">
+                <select class="form-control" id="lootLevel" name="lootLevel">
                   <% for (var i = 0; i < lootLevels.length; i++) {  %>
                     <option <% if(lootContainer.lootLevel == lootLevels[i]._id) { %>selected="selected"<% } %> value="<%= lootLevels[i]._id %>"><%= lootLevels[i].name %></option>
                   <% } %>
                 </select>
-              </div>
             </div>
 
-            <div class="row">
-              <div class="six columns">
+            <div class="form-group">
                 <label for="lootStatus">Status</label>
-                <select class="u-full-width" id="lootLevel" name="lootStatus">
+                <select class="form-control" id="lootLevel" name="lootStatus">
                   <% for (var i = 0; i < lootStatuses.length; i++) {  %>
                     <option <% if(lootContainer.lootStatus == lootStatuses[i]._id) { %>selected="selected"<% } %> value="<%= lootStatuses[i]._id %>"><%= lootStatuses[i].name %></option>
                   <% } %>
                 </select>
-              </div>
             </div>
 
-            <div class="row">
-              <div class="six columns">
+            <div class="form-group">
                 <label for="description">description</label>
-                <input class="u-full-width" type="text" name="description" value="<%= lootContainer.description %>">
-              </div>
+                <input class="form-control" type="text" name="description" value="<%= lootContainer.description %>">
             </div>
 
-            <div class="row">
-              <div class="six columns">
+            <div class="form-group">
                 <label for="location">location</label>
-                <input class="u-full-width" type="text" name="location" value="<%= lootContainer.location %>">
-              </div>
+                <input class="form-control" type="text" name="location" value="<%= lootContainer.location %>">
             </div>
 
-            <input type="hidden" name="_id" value="<%= lootContainer._id %>">
-            <input class="button-primary" type="submit" value="Submit">
+            <div class="form-group">
+              <input type="hidden" name="_id" value="<%= lootContainer._id %>">
+              <input class="btn btn-primary" type="submit" value="Submit">
+            </div>
           </form>
         </div>
-      </div>
-    </div>
 
 <% include common/footer/footer %>
