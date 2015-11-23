@@ -14,6 +14,7 @@
     "mongodb": "2.0.48",
     "q": "^1.4.1",
     "bson": "0.4.19",
+    "jquery": "2.1.4",
     "bootstrap": "3.3.5",
     "less": "^2.5.3"
   },
@@ -26,8 +27,11 @@
     "hotCoffee": "coffee -o dist/ -cw src/",
     "hotTests": "coffee -cwo spec/ spec/",
     "hotCss": "lessc src/client/styles/index.less dist/client/styles/index.css",
+    "copyBootstrap": "ncp node_modules/bootstrap/js/collapse.js dist/client/js/collapse.js",
+    "copyJquery": "ncp node_modules/jquery/dist/jquery.min.js dist/client/js/jquery.min.js",
+    "copyPlugins": "npm run copyBootstrap && npm run copyJquery",
     "postinstall": "npm run brewCoffee",
-    "prestart": "ncp src/ dist/ && npm run hotCss",
+    "prestart": "ncp src/ dist/ && npm run copyPlugins && npm run hotCss",
     "start": "node ./dist/server/index"
   }
 }
