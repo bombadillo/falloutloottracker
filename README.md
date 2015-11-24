@@ -1,1 +1,5 @@
 # falloutloottracker
+
+## TODO
+
+* Authentication
