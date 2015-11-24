@@ -26,6 +26,7 @@ handle = (app) ->
                       lootTypes: lootTypes
                       lootStatuses: lootStatuses
                       lootLevels: lootLevels
+                      filter: request.query
                   )
       else
         response.redirect('/login')
