@@ -1,7 +1,13 @@
 dbHandler = require './dbHandler'
 q = require 'q'
 
-getUserByName = (request) ->
+getUserByName = (userName) ->
+  deferred = q.defer()
+  user = dbHandler.getOne('User', name: userName).then (user) ->
+    deferred.resolve user
+  return deferred.promise
+
+getUserFromCookie = (request) ->
   userName = request.cookies.vaultDweller
   deferred = q.defer()
   user = dbHandler.getOne('User', name: userName).then (user) ->
@@ -13,4 +19,5 @@ isLoggedIn = (request) ->
 
 exports = this
 exports.getUserByName = getUserByName
+exports.getUserFromCookie = getUserFromCookie
 exports.isLoggedIn = isLoggedIn

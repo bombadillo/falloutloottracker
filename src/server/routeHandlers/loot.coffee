@@ -11,7 +11,7 @@ urlHandler = require '../services/urlHandler'
 
 handle = (app) ->
   app.get('/loot', (request, response) ->
-    userSessionHandler.getUserByName(request).then (user) ->
+    userSessionHandler.getUserFromCookie(request).then (user) ->
       if user
         filter = lootFilterParser.parse(request.query).then (filter) ->
           filter.user = user._id
@@ -52,9 +52,8 @@ handle = (app) ->
   app.get('/loot/edit/:id', (request, response) ->
     updated = request.query.updated
     lootId = request.params.id
-    userSessionHandler.getUserByName(request).then (user) ->
+    userSessionHandler.getUserFromCookie(request).then (user) ->
       lootRetriever.getSingle(lootId).then (loot) ->
-        console.log loot.lootTypes
         response.render(
           'pages/editLoot',
           user: user

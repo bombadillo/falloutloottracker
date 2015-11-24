@@ -16,10 +16,10 @@ handle = (app) ->
   app.post('/register', (request, response) ->
     oResponse = response
     userName = request.body.vaultDweller
-    userSessionHandler.getUserByName(request).then (user) ->
+    userSessionHandler.getUserByName(userName).then (user) ->
       if user
         message = "Username #{request.body.vaultDweller} already exists."
-        render message, user
+        render message, undefined
       else
         userRegister.register(userName).then (result) ->
           if result
@@ -27,7 +27,7 @@ handle = (app) ->
             response.redirect '/'
           else
             message = 'Registration failed'
-            render message, user
+            render message, undefined
   )
 
 render = (message, user) ->

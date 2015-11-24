@@ -10,9 +10,10 @@ handle = (app) ->
   )
 
   app.post('/login', (request, response) ->
-    userSessionHandler.getUserByName(request).then (user) ->
+    userName = request.body.vaultDweller
+    userSessionHandler.getUserByName(userName).then (user) ->
       if user
-        response.cookie 'vaultDweller', request.body.vaultDweller
+        response.cookie 'vaultDweller', userName
         response.redirect '/'
       else
         response.redirect '/register'

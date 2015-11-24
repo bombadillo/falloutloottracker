@@ -6,7 +6,7 @@ lootLevelRetriever = require '../services/lootLevelRetriever'
 
 handle = (app) ->
   app.get('/', (request, response) ->
-    userSessionHandler.getUserByName(request).then (user) ->
+    userSessionHandler.getUserFromCookie(request).then (user) ->
       response.render 'pages/index', user: user
   )
 
