@@ -18,8 +18,7 @@
     "bootstrap": "3.3.5",
     "less": "^2.5.3"
   },
-  "dev-dependencies": {
-
+  "devDependencies": {
   },
   "scripts": {
     "test": "mocha",
