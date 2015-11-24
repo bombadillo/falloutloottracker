@@ -56,6 +56,7 @@ handle = (app) ->
   )
 
   app.get('/loot/edit/:id', (request, response) ->
+    updated = request.query.updated
     lootId = request.params.id
     userName = request.cookies.vaultDweller
     userSessionHandler.getUserByName(userName).then (user) ->
@@ -71,6 +72,7 @@ handle = (app) ->
                 lootLevels: lootLevels
                 lootStatuses: lootStatuses
                 user: user
+                updated: updated
               )
   )
 
@@ -79,7 +81,8 @@ handle = (app) ->
     userSessionHandler.getUserByName(userName).then (user) ->
       data = lootDataMapper.map request.body, user
       lootContainerHandler.update(data).then (result) ->
-        response.redirect request.get 'referer'
+        updated = if result then 1 else 0
+        response.redirect request.get('referer') + "?updated=#{updated}"
   )
 
 exports = this

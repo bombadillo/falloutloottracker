@@ -1,5 +1,13 @@
 <% include common/header/header %>
 
+          <% if (updated) { %>
+            <% if (updated == 1) { %>
+              <div class="alert alert-success">Loot item updated</div>
+            <% } else { %>
+              <div class="alert alert-danger">Unable to update loot item</div>
+            <% } %>
+          <% } %>
+
           <form action="/loot/edit" method="POST">
 
             <div class="form-group">
