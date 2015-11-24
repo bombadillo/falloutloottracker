@@ -5,7 +5,7 @@ A simple application to keep track of locked/restricted safes, terminals, doors,
 ## Install
 
 * `npm install`
-* 'npm start'
+* `npm start`
 
 ## TODO
 
