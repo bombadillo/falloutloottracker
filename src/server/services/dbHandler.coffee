@@ -17,10 +17,8 @@ getAll = (collection, params) ->
 getOne = (collection, params) ->
   params = params || {}
   deferred = q.defer()
-  console.log "fetching one for #{collection}"
   dbConnector.connect().then (db) ->
     collection = db.collection(collection)
-    console.log 'getting collection'
     collection.findOne params, (err, result) ->
       if err
         console.log err
@@ -46,7 +44,6 @@ insert = (collection, data) ->
     collection = db.collection collection
     collection.insert data, (err, records) ->
       if err
-        console.log 'error is'
         console.log err
         deferred.resolve false
       else
@@ -54,7 +51,6 @@ insert = (collection, data) ->
   return deferred.promise
 
 update = (collection, data) ->
-  console.log "updating #{data._id}"
   o_id = new BSON.ObjectID data._id
   delete data._id
   deferred = q.defer()

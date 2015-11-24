@@ -16,7 +16,6 @@ connect = ->
         dbConnection = db
         deferred.resolve db
   else
-    console.log 'Reusing connection'
     deferred.resolve dbConnection
   return deferred.promise
 

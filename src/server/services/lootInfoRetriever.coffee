@@ -4,14 +4,12 @@ q = require 'q'
 getAll = (filter) ->
   deferred = q.defer()
   dbHandler.getAll('LootContainer', filter).then (loot) ->
-    console.log 'got loot'
     deferred.resolve loot
   return deferred.promise
 
 getSingle = (lootId) ->
   deferred = q.defer()
   dbHandler.getById('LootContainer', lootId).then (loot) ->
-    console.log 'got loot'
     deferred.resolve loot[0]
   return deferred.promise
 

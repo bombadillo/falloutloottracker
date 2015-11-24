@@ -25,6 +25,15 @@
                 </select>
               </div>
 
+              <div class="form-group">
+                <select class="form-control" id="lootStatus" name="lootStatus">
+                  <option value="">Loot status</option>
+                  <% for (i in lootStatuses) {  %>
+                    <option <% if(filter.lootStatus == lootStatuses[i]) { %>selected="selected"<% } %> value="<%= lootStatuses[i] %>"><%= lootStatuses[i] %></option>
+                  <% } %>
+                </select>
+              </div>
+
                 <div class="form-group">
                   <div class="col-sm-offset-2 col-sm-10">
                     <button type="submit" class="btn btn-default">Filter</button>

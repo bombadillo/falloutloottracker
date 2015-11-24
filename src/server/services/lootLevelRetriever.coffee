@@ -5,7 +5,6 @@ lootLevelConvertor = require './lootLevelConvertor'
 getAll = (bConvert, filter) ->
   deferred = q.defer()
   dbHandler.getAll('Level', filter).then (levels) ->
-    console.log 'got levels'
     if bConvert
       levels = lootLevelConvertor.toArray levels
     deferred.resolve levels
@@ -13,10 +12,8 @@ getAll = (bConvert, filter) ->
 
 getLevelId = (levelName) ->
   deferred = q.defer()
-  console.log "getting #{levelName}"
   if levelName
     getAll(false, name: levelName).then (lootLevel) ->
-      console.log lootLevel
       deferred.resolve lootLevel[0]._id.toString()
   else
     deferred.resolve null
