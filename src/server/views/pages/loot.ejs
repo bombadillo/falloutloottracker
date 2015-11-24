@@ -11,7 +11,7 @@
                 <select class="form-control" id="lootType" name="lootType">
                   <option value="">Loot type</option>
                   <% for (i in lootTypes) {  %>
-                    <option value="<%= lootTypes[i] %>"><%= lootTypes[i] %></option>
+                    <option <% if(filter.lootType == lootTypes[i]) { %>selected="selected"<% } %> value="<%= lootTypes[i] %>"><%= lootTypes[i] %></option>
                   <% } %>
                 </select>
               </div>
