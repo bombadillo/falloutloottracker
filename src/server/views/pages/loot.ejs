@@ -47,32 +47,32 @@
         <div class="row">
           <div class="col-xs-12">
 
-            <% if (loot.lootContainers.length > 0) { %>
+            <% if (loot.lootContainer.length > 0) { %>
 
-              <% for (var i = 0; i < loot.lootContainers.length; i++) {  %>
-              <a href="/loot/edit/<%= loot.lootContainers[i]._id %>">
-              <div class="row lootItem <%= loot.lootStatuses[loot.lootContainers[i].lootStatus] %>">
+              <% for (var i = 0; i < loot.lootContainer.length; i++) {  %>
+              <a href="/loot/edit/<%= loot.lootContainer[i]._id %>">
+              <div class="row lootItem <%= loot.lootStatuses[loot.lootContainer[i].lootStatus] %>">
                 <div class="col-xs-12">
                   <div class="row">
                     <div class="col-xs-12">
                       <div class="panel
-                      <% if (loot.lootStatuses[loot.lootContainers[i].lootStatus] === 'Locked') { %>panel-danger<%} %>
-                      <% if (loot.lootStatuses[loot.lootContainers[i].lootStatus] === 'Unlocked') { %>panel-success<%} %>">
+                      <% if (loot.lootStatuses[loot.lootContainer[i].lootStatus] === 'Locked') { %>panel-danger<%} %>
+                      <% if (loot.lootStatuses[loot.lootContainer[i].lootStatus] === 'Unlocked') { %>panel-success<%} %>">
                         <div class="panel-heading">
                           <h3 class="panel-title">
-                            <%= loot.lootLevels[loot.lootContainers[i].lootLevel] %> <%= loot.lootTypes[loot.lootContainers[i].lootType] %>
-                            <span class="label label-default pull-right"><%= loot.lootStatuses[loot.lootContainers[i].lootStatus] %></span>
+                            <%= loot.lootLevels[loot.lootContainer[i].lootLevel] %> <%= loot.lootTypes[loot.lootContainer[i].lootType] %>
+                            <span class="label label-default pull-right"><%= loot.lootStatuses[loot.lootContainer[i].lootStatus] %></span>
                           </h3>
                         </div>
                         <div class="panel-body">
                           <div class="row">
                             <div class="col-xs-12">
-                              <strong>Description</strong> <%= loot.lootContainers[i].description %>
+                              <strong>Description</strong> <%= loot.lootContainer[i].description %>
                             </div>
                           </div>
                           <div class="row">
                             <div class="col-xs-12">
-                              <strong>Location</strong> <%= loot.lootContainers[i].location %>
+                              <strong>Location</strong> <%= loot.lootContainer[i].location %>
                             </div>
                           </div>
 

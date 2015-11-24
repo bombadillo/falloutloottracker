@@ -42,7 +42,7 @@ handle = (app) ->
   )
 
   app.post('/loot/add', (request, response) ->
-    userSessionHandler.getUserByName(request).then (user) ->
+    userSessionHandler.getUserFromCookie(request).then (user) ->
       if user
         data = lootDataMapper.map request.body, user
         lootContainerHandler.insert(data).then (result) ->
@@ -63,7 +63,7 @@ handle = (app) ->
   )
 
   app.post('/loot/edit', (request, response) ->
-    userSessionHandler.getUserByName(request).then (user) ->
+    userSessionHandler.getUserFromCookie(request).then (user) ->
       data = lootDataMapper.map request.body, user
       lootContainerHandler.update(data).then (result) ->
         updated = if result then 1 else 0

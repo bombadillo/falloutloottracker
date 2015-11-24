@@ -1,36 +1,31 @@
-lootInfoRetriever = require '../services/lootInfoRetriever'
-lootTypeRetriever = require '../services/lootTypeRetriever'
-lootStatusRetriever = require '../services/lootStatusRetriever'
-lootLevelRetriever = require '../services/lootLevelRetriever'
+lootInfoRetriever = require './lootInfoRetriever'
+lootPropertyRetriever = require './lootPropertyRetriever'
+
 q = require 'q'
 
 getAll = (filter) ->
   deferred = q.defer()
   lootInfoRetriever.getAll(filter).then (lootContainers) ->
-    lootTypeRetriever.getAll(true).then (lootTypes) ->
-      lootStatusRetriever.getAll(true).then (lootStatuses) ->
-        lootLevelRetriever.getAll(true).then (lootLevels) ->
-          lootObj =
-            lootContainers: lootContainers
-            lootTypes: lootTypes
-            lootStatuses: lootStatuses
-            lootLevels: lootLevels
-          deferred.resolve lootObj
+    lootPropertyRetriever.getProperties().then (properties) ->
+      lootObj = createLootObject lootContainers, properties
+      deferred.resolve lootObj
   return deferred.promise
 
 getSingle = (lootId) ->
   deferred = q.defer()
   lootInfoRetriever.getSingle(lootId).then (lootContainer) ->
-    lootTypeRetriever.getAll(true).then (lootTypes) ->
-      lootStatusRetriever.getAll(true).then (lootStatuses) ->
-        lootLevelRetriever.getAll(true).then (lootLevels) ->
-          lootObj =
-            lootContainer: lootContainer
-            lootTypes: lootTypes
-            lootStatuses: lootStatuses
-            lootLevels: lootLevels
-          deferred.resolve lootObj
+    lootPropertyRetriever.getProperties().then (properties) ->
+      lootObj = createLootObject lootContainer, properties
+      deferred.resolve lootObj
   return deferred.promise
+
+createLootObject = (lootContainer, properties) ->
+  lootObj =
+    lootContainer: lootContainer
+    lootTypes: properties.lootTypes
+    lootStatuses: properties.lootStatuses
+    lootLevels: properties.lootLevels
+  return lootObj
 
 exports = this
 exports.getAll = getAll
