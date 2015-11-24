@@ -2,7 +2,22 @@
 
     <div class="row">
       <div class="col-xs-12">
-        <h4>Home</h4>
+        <div class="jumbotron text-center">
+
+          <% if (user) { %>
+            <h3>Welcome, <%= user.name %>!</h3>
+            <p>
+              What are you waiting for?
+            </p>
+            <p><a class="btn btn-primary btn-lg" href="/loot" role="button">View your loot!</a></p>
+          <% } else { %>
+            <h1>Welcome, wanderer!</h1>
+            <p>
+              Let's get started.
+            </p>
+            <p><a class="btn btn-primary btn-lg" href="/login" role="button">Login</a></p>
+          <% } %>
+        </div>
       </div>
     </div>
 
