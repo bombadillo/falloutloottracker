@@ -4,10 +4,10 @@ lootLevelRetriever = require '../services/lootLevelRetriever'
 lootContainerHandler = require '../services/lootContainerHandler'
 lootDataMapper = require '../services/lootDataMapper'
 lootStatusRetriever = require '../services/lootStatusRetriever'
-lootInfoRetriever = require '../services/lootInfoRetriever'
 lootFilterParser = require '../services/lootFilterParser'
 
 lootRetriever = require '../services/lootRetriever'
+urlHandler = require '../services/urlHandler'
 
 handle = (app) ->
   app.get('/loot', (request, response) ->
@@ -68,7 +68,8 @@ handle = (app) ->
       data = lootDataMapper.map request.body, user
       lootContainerHandler.update(data).then (result) ->
         updated = if result then 1 else 0
-        response.redirect request.get('referer') + "?updated=#{updated}"
+        url = urlHandler.removeGetParams(request.get('referer'))
+        response.redirect url + "?updated=#{updated}"
   )
 
 exports = this
