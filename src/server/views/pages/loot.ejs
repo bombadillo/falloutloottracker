@@ -10,8 +10,8 @@
               <div class="form-group">
                 <select class="form-control" id="lootType" name="lootType">
                   <option value="">Loot type</option>
-                  <% for (i in lootTypes) {  %>
-                    <option <% if(filter.lootType == lootTypes[i]) { %>selected="selected"<% } %> value="<%= lootTypes[i] %>"><%= lootTypes[i] %></option>
+                  <% for (i in loot.lootTypes) {  %>
+                    <option <% if(filter.lootType == loot.lootTypes[i]) { %>selected="selected"<% } %> value="<%= loot.lootTypes[i] %>"><%= loot.lootTypes[i] %></option>
                   <% } %>
                 </select>
               </div>
@@ -19,8 +19,8 @@
               <div class="form-group">
                 <select class="form-control" id="lootLevel" name="lootLevel">
                   <option value="">Loot level</option>
-                  <% for (i in lootLevels) {  %>
-                    <option <% if(filter.lootLevel == lootLevels[i]) { %>selected="selected"<% } %> value="<%= lootLevels[i] %>"><%= lootLevels[i] %></option>
+                  <% for (i in loot.lootLevels) {  %>
+                    <option <% if(filter.lootLevel == loot.lootLevels[i]) { %>selected="selected"<% } %> value="<%= loot.lootLevels[i] %>"><%= loot.lootLevels[i] %></option>
                   <% } %>
                 </select>
               </div>
@@ -28,8 +28,8 @@
               <div class="form-group">
                 <select class="form-control" id="lootStatus" name="lootStatus">
                   <option value="">Loot status</option>
-                  <% for (i in lootStatuses) {  %>
-                    <option <% if(filter.lootStatus == lootStatuses[i]) { %>selected="selected"<% } %> value="<%= lootStatuses[i] %>"><%= lootStatuses[i] %></option>
+                  <% for (i in loot.lootStatuses) {  %>
+                    <option <% if(filter.lootStatus == loot.lootStatuses[i]) { %>selected="selected"<% } %> value="<%= loot.lootStatuses[i] %>"><%= loot.lootStatuses[i] %></option>
                   <% } %>
                 </select>
               </div>
@@ -47,32 +47,32 @@
         <div class="row">
           <div class="col-xs-12">
 
-            <% if (loot.length > 0) { %>
+            <% if (loot.lootContainers.length > 0) { %>
 
-              <% for (var i = 0; i < loot.length; i++) {  %>
-              <a href="/loot/edit/<%= loot[i]._id %>">
-              <div class="row lootItem <%= lootStatuses[loot[i].lootStatus] %>">
+              <% for (var i = 0; i < loot.lootContainers.length; i++) {  %>
+              <a href="/loot/edit/<%= loot.lootContainers[i]._id %>">
+              <div class="row lootItem <%= loot.lootStatuses[loot.lootContainers[i].lootStatus] %>">
                 <div class="col-xs-12">
                   <div class="row">
                     <div class="col-xs-12">
                       <div class="panel
-                      <% if (lootStatuses[loot[i].lootStatus] === 'Locked') { %>panel-danger<%} %>
-                      <% if (lootStatuses[loot[i].lootStatus] === 'Unlocked') { %>panel-success<%} %>">
+                      <% if (loot.lootStatuses[loot.lootContainers[i].lootStatus] === 'Locked') { %>panel-danger<%} %>
+                      <% if (loot.lootStatuses[loot.lootContainers[i].lootStatus] === 'Unlocked') { %>panel-success<%} %>">
                         <div class="panel-heading">
                           <h3 class="panel-title">
-                            <%= lootLevels[loot[i].lootLevel] %> <%= lootTypes[loot[i].lootType] %>
-                            <span class="label label-default pull-right"><%= lootStatuses[loot[i].lootStatus] %></span>
+                            <%= loot.lootLevels[loot.lootContainers[i].lootLevel] %> <%= loot.lootTypes[loot.lootContainers[i].lootType] %>
+                            <span class="label label-default pull-right"><%= loot.lootStatuses[loot.lootContainers[i].lootStatus] %></span>
                           </h3>
                         </div>
                         <div class="panel-body">
                           <div class="row">
                             <div class="col-xs-12">
-                              <strong>Description</strong> <%= loot[i].description %>
+                              <strong>Description</strong> <%= loot.lootContainers[i].description %>
                             </div>
                           </div>
                           <div class="row">
                             <div class="col-xs-12">
-                              <strong>Location</strong> <%= loot[i].location %>
+                              <strong>Location</strong> <%= loot.lootContainers[i].location %>
                             </div>
                           </div>
 

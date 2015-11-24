@@ -13,8 +13,8 @@
             <div class="form-group">
                 <label for="lootType">Type</label>
                 <select class="form-control" id="lootType" name="lootType">
-                  <% for (var i = 0; i < lootTypes.length; i++) {  %>
-                    <option <% if(lootContainer.lootType == lootTypes[i]._id) { %>selected="selected"<% } %> value="<%= lootTypes[i]._id %>"><%= lootTypes[i].name %></option>
+                  <% for (var i in loot.lootTypes) {  %>
+                    <option <% if(loot.lootContainer.lootType == i._id) { %>selected="selected"<% } %> value="<%= i %>"><%= loot.lootTypes[i] %></option>
                   <% } %>
                 </select>
               </div>
@@ -22,8 +22,8 @@
             <div class="form-group">
                 <label for="lootLevel">Level</label>
                 <select class="form-control" id="lootLevel" name="lootLevel">
-                  <% for (var i = 0; i < lootLevels.length; i++) {  %>
-                    <option <% if(lootContainer.lootLevel == lootLevels[i]._id) { %>selected="selected"<% } %> value="<%= lootLevels[i]._id %>"><%= lootLevels[i].name %></option>
+                  <% for (var i in loot.lootLevels) {  %>
+                    <option <% if(loot.lootContainer.lootLevel == i) { %>selected="selected"<% } %> value="<%= i %>"><%= loot.lootLevels[i] %></option>
                   <% } %>
                 </select>
             </div>
@@ -31,24 +31,24 @@
             <div class="form-group">
                 <label for="lootStatus">Status</label>
                 <select class="form-control" id="lootLevel" name="lootStatus">
-                  <% for (var i = 0; i < lootStatuses.length; i++) {  %>
-                    <option <% if(lootContainer.lootStatus == lootStatuses[i]._id) { %>selected="selected"<% } %> value="<%= lootStatuses[i]._id %>"><%= lootStatuses[i].name %></option>
+                  <% for (var i in loot.lootStatuses) {  %>
+                    <option <% if(loot.lootContainer.lootStatus == i) { %>selected="selected"<% } %> value="<%= i %>"><%= loot.lootStatuses[i] %></option>
                   <% } %>
                 </select>
             </div>
 
             <div class="form-group">
                 <label for="description">Description</label>
-                <input class="form-control" type="text" name="description" value="<%= lootContainer.description %>">
+                <input class="form-control" type="text" name="description" value="<%= loot.lootContainer.description %>">
             </div>
 
             <div class="form-group">
                 <label for="location">Location</label>
-                <input class="form-control" type="text" name="location" value="<%= lootContainer.location %>">
+                <input class="form-control" type="text" name="location" value="<%= loot.lootContainer.location %>">
             </div>
 
             <div class="form-group">
-              <input type="hidden" name="_id" value="<%= lootContainer._id %>">
+              <input type="hidden" name="_id" value="<%= loot.lootContainer._id %>">
               <input class="btn btn-primary" type="submit" value="Submit">
             </div>
           </form>

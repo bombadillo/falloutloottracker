@@ -7,25 +7,21 @@ lootStatusRetriever = require '../services/lootStatusRetriever'
 lootInfoRetriever = require '../services/lootInfoRetriever'
 lootFilterParser = require '../services/lootFilterParser'
 
+lootRetriever = require '../services/lootRetriever'
+
 handle = (app) ->
   app.get('/loot', (request, response) ->
     userSessionHandler.getUserByName(request).then (user) ->
       if user
         filter = lootFilterParser.parse(request.query).then (filter) ->
           filter.user = user._id
-          lootInfoRetriever.getAll(filter).then (loot) ->
-            lootTypeRetriever.getAll(true).then (lootTypes) ->
-              lootStatusRetriever.getAll(true).then (lootStatuses) ->
-                lootLevelRetriever.getAll(true).then (lootLevels) ->
-                  response.render(
-                    'pages/loot',
-                      user: user
-                      loot: loot
-                      lootTypes: lootTypes
-                      lootStatuses: lootStatuses
-                      lootLevels: lootLevels
-                      filter: request.query
-                  )
+          lootRetriever.getAll(filter).then (loot) ->
+            response.render(
+              'pages/loot',
+                user: user
+                loot: loot
+                filter: request.query
+            )
       else
         response.redirect('/login')
   )
@@ -57,19 +53,14 @@ handle = (app) ->
     updated = request.query.updated
     lootId = request.params.id
     userSessionHandler.getUserByName(request).then (user) ->
-      lootInfoRetriever.getSingle(lootId).then (lootContainer) ->
-        lootTypeRetriever.getAll().then (lootTypes) ->
-          lootLevelRetriever.getAll().then (lootLevels) ->
-            lootStatusRetriever.getAll().then (lootStatuses) ->
-              response.render(
-                'pages/editLoot',
-                lootContainer: lootContainer
-                lootTypes: lootTypes
-                lootLevels: lootLevels
-                lootStatuses: lootStatuses
-                user: user
-                updated: updated
-              )
+      lootRetriever.getSingle(lootId).then (loot) ->
+        console.log loot.lootTypes
+        response.render(
+          'pages/editLoot',
+          user: user
+          loot: loot
+          updated: updated
+        )
   )
 
   app.post('/loot/edit', (request, response) ->
