@@ -7,6 +7,7 @@ lootStatusRetriever = require '../services/lootStatusRetriever'
 lootFilterParser = require '../services/lootFilterParser'
 
 lootRetriever = require '../services/lootRetriever'
+lootPropertyRetriever = require '../services/lootPropertyRetriever'
 urlHandler = require '../services/urlHandler'
 
 handle = (app) ->
@@ -29,16 +30,14 @@ handle = (app) ->
   app.get('/loot/add', (request, response) ->
     user = userSessionHandler.isLoggedIn request
     if user
-      lootTypeRetriever.getAll().then (lootTypes) ->
-        lootLevelRetriever.getAll().then (lootLevels) ->
-          lootStatusRetriever.getAll().then (lootStatuses) ->
-            response.render(
-              'pages/addLoot'
-              lootTypes: lootTypes
-              lootLevels: lootLevels
-              lootStatuses: lootStatuses
-              user: user
-            )
+      lootPropertyRetriever.getProperties().then (properties) ->
+        response.render(
+          'pages/addLoot'
+          lootTypes: properties.lootTypes
+          lootLevels: properties.lootLevels
+          lootStatuses: properties.lootStatuses
+          user: user
+        )
   )
 
   app.post('/loot/add', (request, response) ->

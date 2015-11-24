@@ -14,7 +14,7 @@
                 <label for="lootType">Type</label>
                 <select class="form-control" id="lootType" name="lootType">
                   <% for (var i in loot.lootTypes) {  %>
-                    <option <% if(loot.lootContainer.lootType == i._id) { %>selected="selected"<% } %> value="<%= i %>"><%= loot.lootTypes[i] %></option>
+                    <option <% if(loot.lootContainer.lootType == i) { %>selected="selected"<% } %> value="<%= i %>"><%= loot.lootTypes[i] %></option>
                   <% } %>
                 </select>
               </div>

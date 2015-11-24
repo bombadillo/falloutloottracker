@@ -5,8 +5,8 @@
             <div class="form-group">
                 <label for="lootType">Type</label>
                 <select class="form-control" id="lootType" name="lootType">
-                  <% for (var i = 0; i < lootTypes.length; i++) {  %>
-                    <option value="<%= lootTypes[i]._id %>"><%= lootTypes[i].name %></option>
+                  <% for (var i in lootTypes) {  %>
+                    <option value="<%= i %>"><%= lootTypes[i] %></option>
                   <% } %>
                 </select>
             </div>
@@ -14,8 +14,8 @@
             <div class="form-group">
                 <label for="lootLevel">Level</label>
                 <select class="form-control" id="lootLevel" name="lootLevel">
-                  <% for (var i = 0; i < lootLevels.length; i++) {  %>
-                    <option value="<%= lootLevels[i]._id %>"><%= lootLevels[i].name %></option>
+                  <% for (var i in lootLevels) {  %>
+                    <option value="<%= i %>"><%= lootLevels[i] %></option>
                   <% } %>
                 </select>
             </div>
@@ -23,8 +23,8 @@
             <div class="form-group">
                 <label for="lootStatus">Status</label>
                 <select class="form-control" id="lootLevel" name="lootStatus">
-                  <% for (var i = 0; i < lootStatuses.length; i++) {  %>
-                    <option value="<%= lootStatuses[i]._id %>"><%= lootStatuses[i].name %></option>
+                  <% for (var i in lootStatuses) {  %>
+                    <option value="<%= i %>"><%= lootStatuses[i] %></option>
                   <% } %>
                 </select>
             </div>
