@@ -10,6 +10,10 @@ cleanEmptyValues = (data) ->
       delete data[i]
   return data
 
+clonePlainObject = (obj) ->
+  return JSON.parse JSON.stringify(obj)
+
 exports = this
 exports.size = size
 exports.cleanEmptyValues = cleanEmptyValues
+exports.clonePlainObject = clonePlainObject
