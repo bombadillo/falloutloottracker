@@ -30,7 +30,8 @@
     "copyBootstrap": "ncp node_modules/bootstrap/js/collapse.js dist/client/js/collapse.js",
     "copyJquery": "ncp node_modules/jquery/dist/jquery.min.js dist/client/js/jquery.min.js",
     "copyPlugins": "npm run copyBootstrap && npm run copyJquery",
-    "postinstall": "npm run brewCoffee",
+    "build": "npm run brewCoffee && npm run copyPlugins && npm run hotCss",
+    "postinstall": "npm run build",
     "prestart": "ncp src/ dist/ && npm run copyPlugins && npm run hotCss",
     "start": "node ./dist/server/index"
   }
