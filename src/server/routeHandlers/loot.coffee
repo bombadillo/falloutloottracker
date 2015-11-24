@@ -9,8 +9,7 @@ lootFilterParser = require '../services/lootFilterParser'
 
 handle = (app) ->
   app.get('/loot', (request, response) ->
-    userName = request.cookies.vaultDweller
-    userSessionHandler.getUserByName(userName).then (user) ->
+    userSessionHandler.getUserByName(request).then (user) ->
       if user
         filter = lootFilterParser.parse(request.query).then (filter) ->
           filter.user = user._id
@@ -47,8 +46,7 @@ handle = (app) ->
   )
 
   app.post('/loot/add', (request, response) ->
-    userName = request.cookies.vaultDweller
-    userSessionHandler.getUserByName(userName).then (user) ->
+    userSessionHandler.getUserByName(request).then (user) ->
       if user
         data = lootDataMapper.map request.body, user
         lootContainerHandler.insert(data).then (result) ->
@@ -58,8 +56,7 @@ handle = (app) ->
   app.get('/loot/edit/:id', (request, response) ->
     updated = request.query.updated
     lootId = request.params.id
-    userName = request.cookies.vaultDweller
-    userSessionHandler.getUserByName(userName).then (user) ->
+    userSessionHandler.getUserByName(request).then (user) ->
       lootInfoRetriever.getSingle(lootId).then (lootContainer) ->
         lootTypeRetriever.getAll().then (lootTypes) ->
           lootLevelRetriever.getAll().then (lootLevels) ->
@@ -76,8 +73,7 @@ handle = (app) ->
   )
 
   app.post('/loot/edit', (request, response) ->
-    userName = request.cookies.vaultDweller
-    userSessionHandler.getUserByName(userName).then (user) ->
+    userSessionHandler.getUserByName(request).then (user) ->
       data = lootDataMapper.map request.body, user
       lootContainerHandler.update(data).then (result) ->
         updated = if result then 1 else 0

@@ -1,7 +1,8 @@
 dbHandler = require './dbHandler'
 q = require 'q'
 
-getUserByName = (userName) ->
+getUserByName = (request) ->
+  userName = request.cookies.vaultDweller
   deferred = q.defer()
   user = dbHandler.getOne('User', name: userName).then (user) ->
     deferred.resolve user
