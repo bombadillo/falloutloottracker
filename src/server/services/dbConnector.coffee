@@ -1,5 +1,5 @@
 mongoClient = require('mongodb').MongoClient
-config = require '../common/config'
+config = require '../config/app'
 url = config.urls.databaseUri
 q = require 'q'
 
