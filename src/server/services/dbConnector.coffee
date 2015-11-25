@@ -1,5 +1,6 @@
 mongoClient = require('mongodb').MongoClient
-url = 'mongodb://chris:C.mum1873@ds033734.mongolab.com:33734/falloutloottracker'
+config = require '../common/config'
+url = config.urls.databaseUri
 q = require 'q'
 
 dbConnection = undefined
