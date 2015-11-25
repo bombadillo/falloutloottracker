@@ -2,7 +2,7 @@ userSessionHandler = require '../services/userSessionHandler'
 
 handle = (app) ->
   app.get('/logout', (request, response) ->
-    user = userSessionHandler.getUserByName request
+    user = userSessionHandler.getUserFromCookie request
     if user
       response.clearCookie 'vaultDweller'
       response.redirect '/'
