@@ -1,0 +1,531 @@
+[{
+    "_id": {
+        "$oid": "564f2b5a36b6a1e427c29ed4"
+    },
+    "lootType": "5654304be4b06d0088f946ec",
+    "lootLevel": "564d0256339f256100c84e6f",
+    "description": "test2",
+    "location": "locat2",
+    "lootStatus": "564f26a3e4b02e2b2edb599b",
+    "user": {
+        "$oid": "564ef878ac88309c261fd357"
+    }
+},{
+    "_id": {
+        "$oid": "564f2dcab31a195c34fb37c5"
+    },
+    "lootType": "564d0186339f256100c84e26",
+    "lootLevel": "564d0256339f256100c84e6f",
+    "description": "te",
+    "location": "gsdgsdg",
+    "lootStatus": "564f26b3e4b02e2b2edb599c",
+    "user": {
+        "$oid": "564ef878ac88309c261fd357"
+    }
+},{
+    "_id": {
+        "$oid": "564f468adf7b81d03c3e8c46"
+    },
+    "lootType": "564d0186339f256100c84e26",
+    "lootLevel": "564d0248339f256100c84e67",
+    "description": "e",
+    "location": "hdfhfdh",
+    "lootStatus": "564f26a3e4b02e2b2edb599b",
+    "user": {
+        "$oid": "564ef878ac88309c261fd357"
+    }
+},
+{
+    "_id": {
+        "$oid": "5652fe54e500c5042ddc4b6a"
+    },
+    "lootType": "564d0191339f256100c84e31",
+    "lootLevel": "564d0251339f256100c84e6b",
+    "description": "test1",
+    "location": "test2",
+    "lootStatus": "564f26b3e4b02e2b2edb599c",
+    "user": {
+        "$oid": "5652fdeee9d0bb342fee3d9e"
+    }
+},
+{
+    "_id": {
+        "$oid": "5653304218ee4108140ed76e"
+    },
+    "lootType": "564d0191339f256100c84e31",
+    "lootLevel": "564d0251339f256100c84e6b",
+    "description": "Blue ",
+    "location": "Trinity tower",
+    "lootStatus": "564f26a3e4b02e2b2edb599b",
+    "user": {
+        "$oid": "564ef878ac88309c261fd357"
+    }
+},
+{
+    "_id": {
+        "$oid": "5653326e31719c1b005d64db"
+    },
+    "lootType": "564d018c339f256100c84e2d",
+    "lootLevel": "564d0251339f256100c84e6b",
+    "description": "Near the north east",
+    "location": "UCAF radio station",
+    "lootStatus": "564f26a3e4b02e2b2edb599b",
+    "user": {
+        "$oid": "564ef74004ad00582959d112"
+    }
+},
+{
+    "_id": {
+        "$oid": "5653a69f6970a98027957834"
+    },
+    "lootType": "564d0191339f256100c84e31",
+    "lootLevel": "564d0251339f256100c84e6b",
+    "description": "test",
+    "location": "2",
+    "lootStatus": "564f26b3e4b02e2b2edb599c",
+    "user": {
+        "$oid": "5653a459f821c7d025a754b0"
+    }
+},
+{
+    "_id": {
+        "$oid": "5653b0f5eb5c444032c61e25"
+    },
+    "lootType": "564d0186339f256100c84e26",
+    "lootLevel": "564d0248339f256100c84e67",
+    "description": "2",
+    "location": "3",
+    "lootStatus": "564f26b3e4b02e2b2edb599c",
+    "user": {
+        "$oid": "564ef878ac88309c261fd357"
+    }
+},
+{
+    "_id": {
+        "$oid": "5654079278f91e0300ab5ec8"
+    },
+    "lootType": "564d018c339f256100c84e2d",
+    "lootLevel": "564d0251339f256100c84e6b",
+    "description": "",
+    "location": "Fort hagen ",
+    "lootStatus": "564f26a3e4b02e2b2edb599b",
+    "user": {
+        "$oid": "5654075b78f91e0300ab5ec7"
+    }
+},
+{
+    "_id": {
+        "$oid": "5654080678f91e0300ab5ec9"
+    },
+    "lootType": "564d0186339f256100c84e26",
+    "lootLevel": "564d0251339f256100c84e6b",
+    "description": "Down 1 level to the right ",
+    "location": "Park Street station ",
+    "lootStatus": "564f26a3e4b02e2b2edb599b",
+    "user": {
+        "$oid": "5654075b78f91e0300ab5ec7"
+    }
+},
+{
+    "_id": {
+        "$oid": "5654083b78f91e0300ab5eca"
+    },
+    "lootType": "564d018c339f256100c84e2d",
+    "lootLevel": "564d0251339f256100c84e6b",
+    "description": "Bottom floor ",
+    "location": "Wilson atomatoys ",
+    "lootStatus": "564f26a3e4b02e2b2edb599b",
+    "user": {
+        "$oid": "5654075b78f91e0300ab5ec7"
+    }
+},
+{
+    "_id": {
+        "$oid": "5654086c78f91e0300ab5ecb"
+    },
+    "lootType": "564d0186339f256100c84e26",
+    "lootLevel": "564d0251339f256100c84e6b",
+    "description": "Top floor ",
+    "location": "Trinity tower",
+    "lootStatus": "564f26a3e4b02e2b2edb599b",
+    "user": {
+        "$oid": "5654075b78f91e0300ab5ec7"
+    }
+},
+{
+    "_id": {
+        "$oid": "5654089d78f91e0300ab5ecc"
+    },
+    "lootType": "564d0186339f256100c84e26",
+    "lootLevel": "564d0248339f256100c84e67",
+    "description": "Top floor ",
+    "location": "Campus law offices ",
+    "lootStatus": "564f26a3e4b02e2b2edb599b",
+    "user": {
+        "$oid": "5654075b78f91e0300ab5ec7"
+    }
+},
+{
+    "_id": {
+        "$oid": "565408d978f91e0300ab5ecd"
+    },
+    "lootType": "564d0191339f256100c84e31",
+    "lootLevel": "564d0248339f256100c84e67",
+    "description": "Cafe to the east ",
+    "location": "The slog ",
+    "lootStatus": "564f26a3e4b02e2b2edb599b",
+    "user": {
+        "$oid": "5654075b78f91e0300ab5ec7"
+    }
+},
+{
+    "_id": {
+        "$oid": "5654091b78f91e0300ab5ece"
+    },
+    "lootType": "564d0191339f256100c84e31",
+    "lootLevel": "564d0251339f256100c84e6b",
+    "description": "",
+    "location": "Greygarden homestead ",
+    "lootStatus": "564f26a3e4b02e2b2edb599b",
+    "user": {
+        "$oid": "5654075b78f91e0300ab5ec7"
+    }
+},
+{
+    "_id": {
+        "$oid": "5654093f78f91e0300ab5ecf"
+    },
+    "lootType": "564d0191339f256100c84e31",
+    "lootLevel": "564d0248339f256100c84e67",
+    "description": "In basement near water pumps",
+    "location": "Water treatment plant",
+    "lootStatus": "564f26a3e4b02e2b2edb599b",
+    "user": {
+        "$oid": "5654075b78f91e0300ab5ec7"
+    }
+},
+{
+    "_id": {
+        "$oid": "565409df78f91e0300ab5ed0"
+    },
+    "lootType": "564d0186339f256100c84e26",
+    "lootLevel": "564d0251339f256100c84e6b",
+    "description": "Room to right of elevator exit ",
+    "location": "Water treatment plant",
+    "lootStatus": "564f26a3e4b02e2b2edb599b",
+    "user": {
+        "$oid": "5654075b78f91e0300ab5ec7"
+    }
+},
+{
+    "_id": {
+        "$oid": "56540a1478f91e0300ab5ed1"
+    },
+    "lootType": "564d0191339f256100c84e31",
+    "lootLevel": "564d0248339f256100c84e67",
+    "description": "Ground floor ",
+    "location": "Water treatment plant",
+    "lootStatus": "564f26a3e4b02e2b2edb599b",
+    "user": {
+        "$oid": "5654075b78f91e0300ab5ec7"
+    }
+},
+{
+    "_id": {
+        "$oid": "56540a4c78f91e0300ab5ed2"
+    },
+    "lootType": "564d0186339f256100c84e26",
+    "lootLevel": "564d0248339f256100c84e67",
+    "description": "First floor ",
+    "location": "Arcjet systems ",
+    "lootStatus": "564f26a3e4b02e2b2edb599b",
+    "user": {
+        "$oid": "5654075b78f91e0300ab5ec7"
+    }
+},
+{
+    "_id": {
+        "$oid": "56540a6978f91e0300ab5ed3"
+    },
+    "lootType": "564d0186339f256100c84e26",
+    "lootLevel": "564d0248339f256100c84e67",
+    "description": "",
+    "location": "Back Street apparel ",
+    "lootStatus": "564f26a3e4b02e2b2edb599b",
+    "user": {
+        "$oid": "5654075b78f91e0300ab5ec7"
+    }
+},
+{
+    "_id": {
+        "$oid": "56540a7178f91e0300ab5ed4"
+    },
+    "lootType": "564d018c339f256100c84e2d",
+    "lootLevel": "564d0248339f256100c84e67",
+    "description": "",
+    "location": "Back Street apparel ",
+    "lootStatus": "564f26a3e4b02e2b2edb599b",
+    "user": {
+        "$oid": "5654075b78f91e0300ab5ec7"
+    }
+},
+{
+    "_id": {
+        "$oid": "56540a7f78f91e0300ab5ed5"
+    },
+    "lootType": "564d0186339f256100c84e26",
+    "lootLevel": "564d0256339f256100c84e6f",
+    "description": "",
+    "location": "Back Street apparel ",
+    "lootStatus": "564f26a3e4b02e2b2edb599b",
+    "user": {
+        "$oid": "5654075b78f91e0300ab5ec7"
+    }
+},
+{
+    "_id": {
+        "$oid": "56540aaa78f91e0300ab5ed6"
+    },
+    "lootType": "564d0186339f256100c84e26",
+    "lootLevel": "564d0248339f256100c84e67",
+    "description": "",
+    "location": "Jacobs disposal ",
+    "lootStatus": "564f26a3e4b02e2b2edb599b",
+    "user": {
+        "$oid": "5654075b78f91e0300ab5ec7"
+    }
+},{
+    "_id": {
+        "$oid": "56540ab378f91e0300ab5ed7"
+    },
+    "lootType": "564d018c339f256100c84e2d",
+    "lootLevel": "564d0248339f256100c84e67",
+    "description": "",
+    "location": "Jacobs disposal ",
+    "lootStatus": "564f26a3e4b02e2b2edb599b",
+    "user": {
+        "$oid": "5654075b78f91e0300ab5ec7"
+    }
+},
+{
+    "_id": {
+        "$oid": "56540ada78f91e0300ab5ed8"
+    },
+    "lootType": "564d0191339f256100c84e31",
+    "lootLevel": "564d0248339f256100c84e67",
+    "description": "Main entrance ",
+    "location": "Bean town brewery ",
+    "lootStatus": "564f26a3e4b02e2b2edb599b",
+    "user": {
+        "$oid": "5654075b78f91e0300ab5ec7"
+    }
+},
+{
+    "_id": {
+        "$oid": "565429c13046760300268005"
+    },
+    "lootType": "564d018c339f256100c84e2d",
+    "lootLevel": "564d0251339f256100c84e6b",
+    "description": "Next to the fridge",
+    "location": "Raider base",
+    "lootStatus": "564f26b3e4b02e2b2edb599c",
+    "user": {
+        "$oid": "565429ad3046760300268004"
+    }
+},
+{
+    "_id": {
+        "$oid": "5654301348029c0300b340c9"
+    },
+    "lootType": "5654304be4b06d0088f946ec",
+    "lootLevel": "564d0251339f256100c84e6b",
+    "description": "2nd floor",
+    "location": "Revere beach station",
+    "lootStatus": "564f26a3e4b02e2b2edb599b",
+    "user": {
+        "$oid": "565429ad3046760300268004"
+    }
+},
+{
+    "_id": {
+        "$oid": "56544315ab329c400734840c"
+    },
+    "lootType": "564d0186339f256100c84e26",
+    "lootLevel": "564d0248339f256100c84e67",
+    "description": "sdg",
+    "location": "sgd",
+    "lootStatus": "564f26b3e4b02e2b2edb599c",
+    "user": {
+        "$oid": "564f003d28fcf63423adefd9"
+    }
+},
+{
+    "_id": {
+        "$oid": "565460ba1dd2eaa43a3cb555"
+    },
+    "lootType": "564d0186339f256100c84e26",
+    "lootLevel": "564d0251339f256100c84e6b",
+    "description": "35",
+    "location": "346636",
+    "lootStatus": "564f26b3e4b02e2b2edb599c",
+    "user": {
+        "$oid": "564ef878ac88309c261fd357"
+    }
+},
+{
+    "_id": {
+        "$oid": "565461371dd2eaa43a3cb556"
+    },
+    "lootType": "5654304be4b06d0088f946ec",
+    "lootLevel": "564d0251339f256100c84e6b",
+    "description": "Ts",
+    "location": "hv",
+    "lootStatus": "564f26b3e4b02e2b2edb599c",
+    "user": {
+        "$oid": "56545b23344d5100062a49c4"
+    }
+},
+{
+    "_id": {
+        "$oid": "5654619d1dd2eaa43a3cb557"
+    },
+    "lootType": "5654304be4b06d0088f946ec",
+    "lootLevel": "564d0248339f256100c84e67",
+    "description": "te",
+    "location": "dfh",
+    "lootStatus": "564f26b3e4b02e2b2edb599c",
+    "user": {
+        "$oid": "564ef878ac88309c261fd357"
+    }
+},
+{
+    "_id": {
+        "$oid": "565463a5ae2b6d9c3c6c26c2"
+    },
+    "lootType": "564d0191339f256100c84e31",
+    "lootLevel": "564d0251339f256100c84e6b",
+    "description": "2",
+    "location": "1",
+    "lootStatus": "564f26b3e4b02e2b2edb599c",
+    "user": {
+        "$oid": "564ef878ac88309c261fd357"
+    }
+},
+{
+    "_id": {
+        "$oid": "56546d238f730603005ab9fd"
+    },
+    "lootType": "56546cb1e4b036f98b9f58aa",
+    "lootLevel": "564d0248339f256100c84e67",
+    "description": "Big blue truck in the middle of the road",
+    "location": "Somewhere on the road from Corvega to Diamond City",
+    "lootStatus": "564f26a3e4b02e2b2edb599b",
+    "user": {
+        "$oid": "5654075b78f91e0300ab5ec7"
+    }
+},
+{
+    "_id": {
+        "$oid": "56563a0a028de60300af4075"
+    },
+    "lootType": "564d0186339f256100c84e26",
+    "lootLevel": "564d0251339f256100c84e6b",
+    "description": "Top floor ",
+    "location": "Greenetech Genetics ",
+    "lootStatus": "564f26a3e4b02e2b2edb599b",
+    "user": {
+        "$oid": "5654075b78f91e0300ab5ec7"
+    }
+},
+{
+    "_id": {
+        "$oid": "56563b41028de60300af4076"
+    },
+    "lootType": "564d018c339f256100c84e2d",
+    "lootLevel": "564d0256339f256100c84e6f",
+    "description": "First floor after elevator ",
+    "location": "Greenetech Genetics ",
+    "lootStatus": "564f26a3e4b02e2b2edb599b",
+    "user": {
+        "$oid": "5654075b78f91e0300ab5ec7"
+    }
+},
+{
+    "_id": {
+        "$oid": "565a396af3c520030034c0d8"
+    },
+    "lootType": "564d018c339f256100c84e2d",
+    "lootLevel": "564d0256339f256100c84e6f",
+    "description": "South westish off drumlin diner. Deacon unlocked this during mission",
+    "location": "Sewar",
+    "lootStatus": "564f26b3e4b02e2b2edb599c",
+    "user": {
+        "$oid": "5654075b78f91e0300ab5ec7"
+    }
+},
+{
+    "_id": {
+        "$oid": "565ad4d36012180300511b9c"
+    },
+    "lootType": "564d018c339f256100c84e2d",
+    "lootLevel": "564d0256339f256100c84e6f",
+    "description": "Overseers Terminal",
+    "location": "Reactor Room Vault 81",
+    "lootStatus": "564f26a3e4b02e2b2edb599b",
+    "user": {
+        "$oid": "56542a153046760300268006"
+    }
+},
+{
+    "_id": {
+        "$oid": "5662302147d2940300653e34"
+    },
+    "lootType": "564d018c339f256100c84e2d",
+    "lootLevel": "564d0251339f256100c84e6b",
+    "description": "",
+    "location": "Coast guard pier ",
+    "lootStatus": "564f26b3e4b02e2b2edb599c",
+    "user": {
+        "$oid": "5654075b78f91e0300ab5ec7"
+    }
+},
+{
+    "_id": {
+        "$oid": "566618e31d83b70300aedbd4"
+    },
+    "lootType": "564d0191339f256100c84e31",
+    "lootLevel": "564d0256339f256100c84e6f",
+    "description": "Ground floor -1",
+    "location": "University point ",
+    "lootStatus": "564f26a3e4b02e2b2edb599b",
+    "user": {
+        "$oid": "5654075b78f91e0300ab5ec7"
+    }
+},
+{
+    "_id": {
+        "$oid": "56674b1f6d74530300b585e6"
+    },
+    "lootType": "564d018c339f256100c84e2d",
+    "lootLevel": "564d0256339f256100c84e6f",
+    "description": "Very top, where the synth raider was ",
+    "location": "Libertalia ",
+    "lootStatus": "564f26a3e4b02e2b2edb599b",
+    "user": {
+        "$oid": "5654075b78f91e0300ab5ec7"
+    }
+},
+{
+    "_id": {
+        "$oid": "566754a52a6542030030d3cc"
+    },
+    "lootType": "564d018c339f256100c84e2d",
+    "lootLevel": "564d0251339f256100c84e6b",
+    "description": "",
+    "location": "BADTFL Regional Office ",
+    "lootStatus": "564f26a3e4b02e2b2edb599b",
+    "user": {
+        "$oid": "5654075b78f91e0300ab5ec7"
+    }
+}
+]
