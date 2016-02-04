@@ -1,0 +1,31 @@
+[{
+  "_id": {
+    "$oid": "564d0186339f256100c84e26"
+  },
+  "name": "Safe"
+}, {
+  "_id": {
+    "$oid": "564d018c339f256100c84e2d"
+  },
+  "name": "Terminal"
+}, {
+  "_id": {
+    "$oid": "564d0191339f256100c84e31"
+  },
+  "name": "Door"
+}, {
+  "_id": {
+    "$oid": "56542ff2e4b06d0088f946e0"
+  },
+  "name": "Trunk"
+}, {
+  "_id": {
+    "$oid": "5654304be4b06d0088f946ec"
+  },
+  "name": "Miscellaneous"
+}, {
+  "_id": {
+    "$oid": "56546cb1e4b036f98b9f58aa"
+  },
+  "name": "Truck Cargo"
+}]
