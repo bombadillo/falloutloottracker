@@ -1,6 +1,6 @@
 dbConnector = require './dbConnector'
-BSON = require('bson').BSONPure
 q = require 'q'
+mongodb = require 'mongodb'
 
 getAll = (collection, params) ->
   params = params || {}
@@ -26,8 +26,8 @@ getOne = (collection, params) ->
         deferred.resolve result
   return deferred.promise
 
-getById = (collection, id) ->
-  o_id = new BSON.ObjectID id
+getById = (collection, id) ->  
+  o_id = new mongodb.ObjectID id
   deferred = q.defer()
   dbConnector.connect().then (db) ->
     collection = db.collection(collection)
@@ -51,17 +51,17 @@ insert = (collection, data) ->
   return deferred.promise
 
 update = (collection, data) ->
-  o_id = new BSON.ObjectID data._id
+  o_id = new mongodb.ObjectID data._id
   delete data._id
   deferred = q.defer()
   dbConnector.connect().then (db) ->
     collection = db.collection(collection)
-    collection.updateOne(_id: o_id, data, (err, result) ->
+    collection.updateOne {_id: o_id}, {$set: data}, (err, result) ->
       if err
         console.log err
       else
         deferred.resolve result
-    )
+    
   return deferred.promise
 
 

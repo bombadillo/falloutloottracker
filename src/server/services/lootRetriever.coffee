@@ -12,6 +12,7 @@ getAll = (filter) ->
   return deferred.promise
 
 getSingle = (lootId) ->
+  console.log 'get single'
   deferred = q.defer()
   lootInfoRetriever.getSingle(lootId).then (lootContainer) ->
     lootPropertyRetriever.getProperties().then (properties) ->

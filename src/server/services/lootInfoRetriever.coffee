@@ -9,6 +9,7 @@ getAll = (filter) ->
 
 getSingle = (lootId) ->
   deferred = q.defer()
+  console.log "get #{lootId}"
   dbHandler.getById('LootContainer', lootId).then (loot) ->
     deferred.resolve loot[0]
   return deferred.promise

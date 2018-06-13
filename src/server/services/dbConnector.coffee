@@ -14,8 +14,8 @@ connect = ->
         console.log err
       else
         console.log 'Connected'
-        dbConnection = db
-        deferred.resolve db
+        dbConnection = db.db 'falloutloottracker'
+        deferred.resolve dbConnection
   else
     deferred.resolve dbConnection
   return deferred.promise

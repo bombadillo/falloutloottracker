@@ -10,8 +10,12 @@ getUserByName = (userName) ->
 getUserFromCookie = (request) ->
   userName = request.cookies.vaultDweller
   deferred = q.defer()
+  console.log 'retrieving user'
   user = dbHandler.getOne('User', name: userName).then (user) ->
+    console.log 'got user'
     deferred.resolve user
+
+  console.log 'return promise'
   return deferred.promise
 
 isLoggedIn = (request) ->
